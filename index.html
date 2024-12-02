@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONTCY Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-content">
+            <img src="logo.jpg" alt="Logo" class="logo">
+            <h2>Sign in</h2>
+            <form id="login-form">
+                <input type="text" id="email" name="email" placeholder="Email or Phone Number" required>
+                <button type="submit" class="submit-button">Sign In</button>
+                <div class="options">
+                    <input type="checkbox" id="keep-signed-in"> 
+                    <label for="keep-signed-in">Keep me signed in</label>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Forgot password?</a>
+                    <a href="#">Create ONTCY Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Powered by <strong>Suze AA LLC</strong></p>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            
+            // Optional: You can perform form validation or checks here
+            
+            // After validation or confirmation, redirect to another page
+            window.location.href = "anotherPage.html"; // Replace with your destination page
+        });
+    </script>
+</body>
+</html>
