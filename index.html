@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONTCY BISTRO Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #525759;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+    display: flex;
+    align-items: center; /* Vertically centers the logo */
+    background-color: #525759;
+    padding: 0;
+    margin: 0;
+    height: 100px; /* Adjust the header height */
+    padding-left: 50px;
+}
+
+header img {
+    width: 150px; /* Maintain the smaller logo width */
+    height: auto;
+    margin-right: 20px; /* Space between the image and the rest of the header content */
+}
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #525759;
+        }
+        th {
+            background-color: black;
+            color: #525759;
+        }
+        td {
+            background-color: #2d2d2d;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            padding: 8px;
+            margin: 5px;
+            background-color: #444;
+            border: 1px solid #525759;
+            color: #525759;
+        }
+        button {
+            background-color: #525759;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b78d58;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Bistro Inventory"> <!-- Replace with your uploaded image path -->
+    </header>
+
+    <section>
+        <form id="inventoryForm">
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="number" id="itemCount" placeholder="Item Count" required>
+            <input type="number" id="currentPrice" placeholder="Current Order Price" required>
+            <input type="number" id="lastPrice" placeholder="Last Order Price" required>
+            <input type="date" id="expiration" required>
+            <input type="text" id="manufacturer" placeholder="Manufacturer" required>
+            <input type="text" id="itemId" placeholder="Item ID" required>
+            <button type="button" onclick="addProduct()">Add Product</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Item Count</th>
+                    <th>Current Order Price</th>
+                    <th>Last Order Price</th>
+                    <th>Expiration</th>
+                    <th>Manufacturer</th>
+                    <th>Item ID</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTableBody">
+                <!-- Pre-loaded Inventory Items -->
+                <tr>
+                    <td>Sugar Free Vanilla</td>
+                    <td>5</td>
+                    <td>$10.00</td>
+                    <td>$9.50</td>
+                    <td>2025-12-31</td>
+                    <td>Starbucks</td>
+                    <td>ID001</td>
+                </tr>
+                <tr>
+                    <td>Peppermint</td>
+                    <td>3</td>
+                    <td>$12.00</td>
+                    <td>$11.50</td>
+                    <td>2025-10-30</td>
+                    <td>Starbucks</td>
+                    <td>ID002</td>
+                </tr>
+                <tr>
+                    <td>Classic Syrup</td>
+                    <td>1</td>
+                    <td>$8.50</td>
+                    <td>$8.00</td>
+                    <td>2025-09-15</td>
+                    <td>Starbucks</td>
+                    <td>ID003</td>
+                </tr>
+                <tr>
+                    <td>Vanilla</td>
+                    <td>3</td>
+                    <td>$15.00</td>
+                    <td>$14.50</td>
+                    <td>2025-11-10</td>
+                    <td>Starbucks</td>
+                    <td>ID004</td>
+                </tr>
+                <tr>
+                    <td>Pumpkin Spice</td>
+                    <td>2</td>
+                    <td>$5.00</td>
+                    <td>$4.80</td>
+                    <td>2026-01-20</td>
+                    <td>Starbucks</td>
+                    <td>ID005</td>
+                </tr>
+                <tr>
+                    <td>Bittersweet Chocolate</td>
+                    <td>2</td>
+                    <td>$7.00</td>
+                    <td>$6.80</td>
+                    <td>2025-07-25</td>
+                    <td>Starbucks</td>
+                    <td>ID006</td>
+                </tr>
+                <tr>
+                    <td>Pumpkin Spice Sauce</td>
+                    <td>2</td>
+                    <td>$9.00</td>
+                    <td>$8.75</td>
+                    <td>2025-06-15</td>
+                    <td>Starbucks</td>
+                    <td>ID007</td>
+                </tr>
+                <tr>
+                    <td>White Chocolate</td>
+                    <td>3</td>
+                    <td>$18.00</td>
+                    <td>$17.50</td>
+                    <td>2025-08-10</td>
+                    <td>Starbucks</td>
+                    <td>ID008</td>
+                </tr>
+                <tr>
+                    <td>Caramel</td>
+                    <td>3</td>
+                    <td>$11.00</td>
+                    <td>$10.50</td>
+                    <td>2025-05-25</td>
+                    <td>Starbucks</td>
+                    <td>ID009</td>
+                </tr>
+                <tr>
+                    <td>Tazo TEA CHAI LATTE</td>
+                    <td>4</td>
+                    <td>$13.50</td>
+                    <td>$13.00</td>
+                    <td>2025-04-18</td>
+                    <td>Starbucks</td>
+                    <td>ID010</td>
+                </tr>
+                <tr>
+                    <td>Espresso DECAF</td>
+                    <td>2</td>
+                    <td>$6.50</td>
+                    <td>$6.00</td>
+                    <td>2025-03-12</td>
+                    <td>Starbucks</td>
+                    <td>ID011</td>
+                </tr>
+                <tr>
+                    <td>Cold Brew</td>
+                    <td>90</td>
+                    <td>$14.00</td>
+                    <td>$13.50</td>
+                    <td>2025-02-20</td>
+                    <td>Starbucks</td>
+                    <td>ID012</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        function addProduct() {
+            // Get values from the input fields
+            const productName = document.getElementById('productName').value;
+            const itemCount = document.getElementById('itemCount').value;
+            const currentPrice = document.getElementById('currentPrice').value;
+            const lastPrice = document.getElementById('lastPrice').value;
+            const expiration = document.getElementById('expiration').value;
+            const manufacturer = document.getElementById('manufacturer').value;
+            const itemId = document.getElementById('itemId').value;
+
+            // Create a new row for the table
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${productName}</td>
+                <td>${itemCount}</td>
+                <td>${currentPrice}</td>
+                <td>${lastPrice}</td>
+                <td>${expiration}</td>
+                <td>${manufacturer}</td>
+                <td>${itemId}</td>
+            `;
+
+            // Add the new row to the table
+            document.getElementById('inventoryTableBody').appendChild(row);
+
+            // Clear the form fields
+            document.getElementById('inventoryForm').reset();
+        }
+    </script>
+</body>
+</html>
