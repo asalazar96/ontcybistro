@@ -1,45 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONTCY Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bistro Bar Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-content">
-            <img src="logo.jpg" alt="Logo" class="logo">
-            <h2>Sign in</h2>
-            <form id="login-form">
-                <input type="text" id="email" name="email" placeholder="Email or Phone Number" required>
-                <button type="submit" class="submit-button">Sign In</button>
-                <div class="options">
-                    <input type="checkbox" id="keep-signed-in"> 
-                    <label for="keep-signed-in">Keep me signed in</label>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Forgot password?</a>
-                    <a href="#">Create ONTCY Account</a>
-                </div>
-            </form>
-        </div>
+  <div class="landing-container">
+    <!-- Bistro Logo -->
+    <img src="bistro-logo.webp" alt="Bistro Logo" class="bistro-logo">
+
+    <!-- Animated Text -->
+    <div class="animated-text">
+      <p>We are <span class="cooking">cooking</span> something nice...</p>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>Powered by <strong>Suze AA LLC</strong></p>
-    </footer>
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <p>If you have any questions, please contact:</p>
+      <p><strong>Alejandro Salazar</strong></p>
+      <p>📞 657-610-3703</p>
+    </div>
+  </div>
 
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-            
-            // Optional: You can perform form validation or checks here
-            
-            // After validation or confirmation, redirect to another page
-            window.location.href = "ontcyinv/main_inv.html"; // Replace with your destination page
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
